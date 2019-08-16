@@ -1,0 +1,21 @@
+<div [class.isredbox]="!red">
+    <h1>Hello Angular 8</h1>
+    <p>Angular 8 представляет модульную архитектуру приложения</p>
+    <input type="checkbox" [(ngModel)]="red" />
+    <br />
+    <input type="number" [(ngModel)]="age" />
+    <br />
+    <h2>Количество кликов: {{clicks}}</h2>
+    <child-comp [(userName)]="name" [userAge]="age" (onChanged)="onChanged($event)" #counter></child-comp>
+    <div>Выбранное имя: {{name}}</div>
+    <br />
+    <p #userName>{{name}}</p>
+    <p>{{userName.textContent}}</p>
+    <input type="text" [(ngModel)]="name" />
+    <br />
+    <button (click)="counter.increment()">+</button>
+    <button (click)="counter.decrement()">-</button>
+    <br />
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+</div>
